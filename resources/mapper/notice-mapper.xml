@@ -13,8 +13,8 @@
 	  		#{noticeWriter}, 
 	  		DEFAULT, 
 	  		DEFAULT, 
-	  		null, 
-	  		null, 
+	  		#{attachmentName}, 
+	  		#{attachmentPath}, 
 	  		DEFAULT)
   	</insert>  
   </mapper>
