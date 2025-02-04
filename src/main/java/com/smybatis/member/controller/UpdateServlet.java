@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import com.smybatis.member.common.NavigationUtil;
 import com.smybatis.member.model.service.MemberService;
 import com.smybatis.member.model.vo.Member;
 
@@ -43,9 +44,8 @@ public class UpdateServlet extends HttpServlet {
 			response.sendRedirect("/member/mypage");
 		}else {
 			//실패
-			request.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(request, response);
+			NavigationUtil.navigateToError(request, response, "404", "수정에 실패하였습니다.");
+			//request.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(request, response);
 		}
-		
 	}
-
 }

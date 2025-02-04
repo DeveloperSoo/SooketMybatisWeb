@@ -33,6 +33,9 @@
   		UPDATE MEMBER_TBL SET EMAIL = #{email}, PHONE = #{phone} , ADDRESS = #{address}, HOBBY = #{hobby} WHERE MEMBER_ID = #{memberId}
   	</update>
 
+	<delete id="deleteMember">
+		DELETE FROM MEMBER_TBL WHERE MEMBER_ID = #{memberId}
+	</delete>
   	
   </mapper>
   

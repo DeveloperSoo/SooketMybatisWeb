@@ -65,6 +65,12 @@ public class MemberService {
 	}
 
 
+	public int deleteMember(String memberId) {
+		int result = mDao.deleteMember(conn, memberId);
+		return result;
+	}
+
+
 
 }
 

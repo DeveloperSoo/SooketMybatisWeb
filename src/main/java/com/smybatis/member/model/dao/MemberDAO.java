@@ -32,6 +32,11 @@ public class MemberDAO {
 		return result;
 	}
 
+	public int deleteMember(SqlSession conn, String memberId) {
+		int result = conn.delete("MemberMapper.deleteMember",memberId);
+		return result;
+	}
+
 
 //		이건 구형 방식	
 //	public Member selectOneByLogin(Connection conn, Member member) throws SQLException {

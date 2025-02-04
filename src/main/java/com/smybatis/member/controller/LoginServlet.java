@@ -2,6 +2,7 @@ package com.smybatis.member.controller;
 
 import java.io.IOException;
 
+import com.smybatis.member.common.NavigationUtil;
 import com.smybatis.member.model.service.MemberService;
 import com.smybatis.member.model.vo.Member;
 
@@ -51,10 +52,10 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect("/");
 		}else {
 			//실패
-			request.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(request, response);
+			NavigationUtil.navigateToError(request, response, "404", "로그인이 필요합니다");
+//			request.setAttribute("errorcode", 404);
+//			request.setAttribute("errorMessage", "데이터가 존재하지 않습니다.");
+//			request.getRequestDispatcher("/WEB-INF/views/common/error.jsp").forward(request, response);
 		}
-		
-		
 	}
-
 }
