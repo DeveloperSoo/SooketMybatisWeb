@@ -7,6 +7,9 @@
 	<settings>
 		<setting name="jdbcTypeForNull" value="NULL"/>
 	</settings>
+	<typeAliases>
+		<typeAlias type="com.smybatis.notice.model.vo.Notice" alias="Notice"/>
+	</typeAliases>
 
 	<environments default="development">
 		<environment id="development">

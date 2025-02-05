@@ -1,5 +1,7 @@
 package com.smybatis.notice.model.service;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.smybatis.member.common.SqlSessionTemplate;
@@ -22,7 +24,26 @@ public class NoticeService {
 		int result = nDao.insertNotice(session, notice);
 		return result;
 	}
-	
-	
-	
+
+
+
+	public List<Notice> selectListAll() {
+		List<Notice> nList = nDao.selectListAll(session);
+		return nList;
+	}
+
+
+
+	public Notice selectOneByNo(int noticeNo) {
+		Notice notice = nDao.selectOneByNo(session, noticeNo);
+		return notice;
+	}
+
+
+
+	public int deleteNotice(int noticeNo) {
+		int result = nDao.deleteNotice(session, noticeNo);
+		return result;
+	}
+
 }

@@ -3,11 +3,34 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   <mapper namespace="NoticeMapper">
+  	<resultMap type="Notice" id="noticeResultMap">
+  		<id		property="noticeNo" 		column="NOTICE_NO"/>
+  		<result property="noticeSubject" 	column="NOTICE_SUBJECT"/>
+  		<result property="noticeContent" 	column="NOTICE_CONTENT"/>
+  		<result property="noticeWriter" 	column="NOTICE_WRITER"/>
+  		<result property="WriteDate"		column="WRITE_DATE"/>
+  		<result property="viewCount" 		column="VIEW_COUNT"/>
+  		<result property="attachmentName" 	column="ATTACHMENT_NAME"/>
+  		<result property="attachmentPath" 	column="ATTACHMENT_PATH"/>
+  		<result property="attachmentDate" 	column="ATTACHMENT_DATE"/>
+  	</resultMap>
+  	
+  	<select id="selectListAll" resultMap="noticeResultMap">
+  		SELECT * FROM NOTICE_TBL ORDER BY NOTICE_NO DESC
+  	</select>
+  
+  	<select id="selectOneByNo" resultMap="noticeResultMap">
+  		SELECT * FROM NOTICE_TBL WHERE NOTICE_NO = #{noticeNo}
+  	</select>
+  	
+  	<delete id="deleteNotice">
+  		DELETE FROM NOTICE_TBL WHERE NOTICE_NO = #{noticeNo}
+  	</delete>
   
   	<insert id="insertNotice">
   		INSERT INTO NOTICE_TBL
   		VALUES(
-	  		SEQ_NOTICE_NO.NEXTVAL, 
+	  		SEQ_NOTICE_NO.NEXTVAL,  
 	  		#{noticeSubject}, 
 	  		#{noticeContent}, 
 	  		#{noticeWriter}, 
@@ -17,4 +40,5 @@
 	  		#{attachmentPath}, 
 	  		DEFAULT)
   	</insert>  
+  	
   </mapper>
