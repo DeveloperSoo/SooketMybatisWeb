@@ -35,7 +35,13 @@ main {
 	padding: 30px 20px;
 	min-height: 300px;
 	line-height: 1.6;
+	/*
+	연속된 공백을 보존함, 개행문자를 보존함
+	필요할 때 자동으로 줄바꿈	
+	*/
+	white-space: pre-wrap;
 }
+	
 
 
 .notice-file {

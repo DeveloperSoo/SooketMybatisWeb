@@ -46,4 +46,11 @@ public class NoticeService {
 		return result;
 	}
 
+
+
+	public int updateNotice(Notice notice) {
+		int result = nDao.updateNotice(session, notice);
+		return result;
+	}
+
 }

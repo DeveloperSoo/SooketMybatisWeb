@@ -24,10 +24,7 @@
 								<span>조회 : ${notice.viewCount }</span>					
 							</div>					
 						</div>
-						<div class="notice-content">
-							${notice.noticeContent }
-						
-						</div>
+						<div class="notice-content">${notice.noticeContent }</div>
 						<div class="notice-file">
 							<h4>첨부파일</h4>
 							<a href="#">${notice.attachmentName }</a>

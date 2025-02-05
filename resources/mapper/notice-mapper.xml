@@ -25,7 +25,12 @@
   	
   	<delete id="deleteNotice">
   		DELETE FROM NOTICE_TBL WHERE NOTICE_NO = #{noticeNo}
-  	</delete>
+  	</delete> 
+  
+  	<update id="updateNotice">
+  		UPDATE NOTICE_TBL SET NOTICE_SUBJECT = #{noticeSubject}, NOTICE_CONTENT = #{noticeContent} WHERE NOTICE_NO = #{noticeNo}
+  	</update>
+  
   
   	<insert id="insertNotice">
   		INSERT INTO NOTICE_TBL
