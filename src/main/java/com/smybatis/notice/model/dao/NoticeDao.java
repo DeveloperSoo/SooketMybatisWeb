@@ -18,9 +18,12 @@ public class NoticeDao {
 	}
 
 
-	public List<Notice> selectListAll(SqlSession session) {
-		int offset = 0;
+	public List<Notice> selectListAll(SqlSession session, int currentPage) {
 		int limit = 10;
+		int offset = (currentPage-1) * limit;
+		// currentPage가 1이면 offset은 0
+		// currentPage가 2이면 offset은 10
+		// currentPage가 3이면 offset은 20
 		RowBounds rowBounds = new RowBounds(offset , limit);
 		//List<Notice> nList = session.selectList("NoticeMapper.selectListAll");
 		List<Notice> nList = session.selectList("NoticeMapper.selectListAll", null, rowBounds);

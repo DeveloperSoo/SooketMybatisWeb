@@ -36,7 +36,7 @@
 						<a href="/notice/delete?noticeNo=${notice.noticeNo}" class="btn btn-admin">삭제</a>
 					</div>
 					<div class="navigation-buttons">
-						<a href="/notice/list" class="btn">목록</a>
+						<a href="/notice/list?currentPage=1" class="btn">목록</a>
 						<a href="#" class="btn">이전글</a>
 						<a href="#" class="btn">다음글</a>
 					</div>
